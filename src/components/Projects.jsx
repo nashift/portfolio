@@ -7,13 +7,13 @@ const projects = [
     title: "Tool Rental Management System",
     desc: "Role-based MERN application with user, company, and admin flows. Includes authentication, image uploads, and approvals.",
     tech: ["React", "Node", "Express", "MongoDB"],
-    image: "/projects/tool-rental.png",
+    image: "/p2.png",
   },
   {
     title: "Currency Counter",
     desc: "Logic-based JavaScript application to track denominations, calculate totals, and set financial targets.",
     tech: ["JavaScript", "HTML", "CSS"],
-    image: "/projects/currency-counter.png",
+    image: "/p1.png",
   },
 ];
 
