@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Reveal from "./Reveal";
 import ImageModal from "./ImageModal";
 
@@ -8,17 +8,27 @@ const projects = [
     desc: "Role-based MERN application with user, company, and admin flows. Includes authentication, image uploads, and approvals.",
     tech: ["React", "Node", "Express", "MongoDB"],
     image: "/p2.png",
+    live: "",
+    github: "https://github.com/nashif-dev/shareShed",
   },
   {
     title: "Currency Counter",
     desc: "Logic-based JavaScript application to track denominations, calculate totals, and set financial targets.",
     tech: ["JavaScript", "HTML", "CSS"],
     image: "/p1.png",
+     live: "https://cash-counternashif.vercel.app/",
+    github: "https://github.com/nashif-dev/cash-counter",
   },
 ];
 
 export default function Projects() {
   const [activeImage, setActiveImage] = useState(null);
+
+  useEffect(() => {
+    const close = (e) => e.key === "Escape" && setActiveImage(null);
+    window.addEventListener("keydown", close);
+    return () => window.removeEventListener("keydown", close);
+  }, []);
 
   return (
     <section id="projects" className="max-w-6xl mx-auto px-6 py-32">
@@ -54,7 +64,7 @@ export default function Projects() {
                 </p>
 
                 <div className="flex flex-wrap gap-2 text-xs text-neutral-500">
-                  {p.tech.map(t => (
+                  {p.tech.map((t) => (
                     <span
                       key={t}
                       className="border border-neutral-700 px-2 py-1 rounded"
@@ -63,6 +73,25 @@ export default function Projects() {
                     </span>
                   ))}
                 </div>
+                <div className="flex gap-4 pt-2 text-sm">
+                  {p.live && (
+                    <a
+                      href={p.live}
+                      target="_blank"
+                      className="text-green-400 hover:underline"
+                    >
+                      Live Demo →
+                    </a>
+                  )}
+
+                  <a
+                    href={p.github}
+                    target="_blank"
+                    className="text-neutral-400 hover:text-green-400"
+                  >
+                    Source Code
+                  </a>
+                </div>
               </div>
             </div>
           ))}
@@ -70,10 +99,7 @@ export default function Projects() {
       </Reveal>
 
       {activeImage && (
-        <ImageModal
-          src={activeImage}
-          onClose={() => setActiveImage(null)}
-        />
+        <ImageModal src={activeImage} onClose={() => setActiveImage(null)} />
       )}
     </section>
   );

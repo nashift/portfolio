@@ -3,19 +3,25 @@ import { FaGithub, FaInstagram, FaLinkedin, FaWhatsapp } from "react-icons/fa";
 
 export default function Hero() {
   return (
-    <section className="min-h-screen flex items-center justify-center px-6 pt-24">
+    <section className="min-h-screen flex  items-center justify-center px-6 pt-24">
       <Reveal>
         <div className="text-center space-y-8">
-          <h1 className="text-6xl font-bold text-green-400 hover:text-7xl transition-all duration-400">
+          <h1
+            className="text-5xl sm:text-6xl md:text-7xl mb-2
+                      font-semibold
+                      tracking-tight
+                    text-green-400"
+          >
             Nashif
           </h1>
+          <div className="mx-auto w-60 h-0.5 bg-green-400/60" />
 
-          <p className="text-xl text-neutral-300">
-            Full Stack Developer
-          </p>
 
-          <p className="text-sm text-neutral-500">
-             design &nbsp;  build &nbsp;  deploy &nbsp;  enjoy
+          <p className="text-lg sm:text-xl text-neutral-300 tracking-wide">Full Stack Developer</p>
+
+          <p className="text-sm text-neutral-500  transition-all">
+            coding is my superpower
+            <span className="hover:animate-spin transition-all">🚀</span>
           </p>
 
           <div className="flex justify-center gap-6 pt-4">

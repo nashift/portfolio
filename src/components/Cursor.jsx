@@ -14,26 +14,34 @@ export default function Cursor() {
 
     window.addEventListener("mousemove", move);
 
-    document.querySelectorAll("a, button").forEach(el => {
+    const hoverTargets = document.querySelectorAll("a, button");
+    hoverTargets.forEach(el => {
       el.addEventListener("mouseenter", addHover);
       el.addEventListener("mouseleave", removeHover);
     });
 
     return () => {
       window.removeEventListener("mousemove", move);
+      hoverTargets.forEach(el => {
+        el.removeEventListener("mouseenter", addHover);
+        el.removeEventListener("mouseleave", removeHover);
+      });
     };
   }, []);
 
   return (
     <div
-      className={`fixed top-0 left-0 pointer-events-none z-9999
-        transition-transform duration-150 ease-out
-        ${hover ? "scale-150 " : "scale-100"}`}
+      className="fixed top-0 left-0 pointer-events-none z-9999
+                 transition-transform duration-150 ease-out"
       style={{
-        transform: `translate(${pos.x - 6}px, ${pos.y - 6}px)`,
+        transform: `
+          translate(${pos.x}px, ${pos.y}px)
+          translate(-50%, -50%)
+          scale(${hover ? 0.6  : 1})
+        `,
       }}
     >
-      <div className="w-3 h-3 rounded-full bg-green-400 opacity-80" />
+      <div className="w-3 h-3 rounded-full bg-green-400 opacity-70" />
     </div>
   );
 }

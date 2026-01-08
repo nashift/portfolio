@@ -5,6 +5,7 @@ import TechStack from "./components/TechStack";
 import Projects from "./components/Projects";
 import Contact from "./components/Contact";
 import Cursor from "./components/Cursor";
+import Footer from "./components/Footer";
 import { Analytics } from "@vercel/analytics/react"
 
 // import './App.css'
@@ -19,6 +20,7 @@ export default function App() {
         <TechStack />
         <Projects />
         <Contact />
+        <Footer/>
       <Analytics/>
       
     </>
