@@ -31,7 +31,7 @@ export default function Cursor() {
 
   return (
     <div
-      className="fixed top-0 left-0 pointer-events-none z-9999
+      className=" fixed top-0 left-0 pointer-events-none z-9999
                  transition-transform duration-150 ease-out"
       style={{
         transform: `
