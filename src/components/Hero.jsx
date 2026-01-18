@@ -26,7 +26,7 @@ export default function Hero() {
 
           <div className="flex justify-center gap-6 pt-4">
             <a
-              href="https://github.com/nashif-dev"
+              href="https://github.com/nashift"
               target="_blank"
               className="text-neutral-400 hover:text-green-400 text-xl"
             >

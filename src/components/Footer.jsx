@@ -10,7 +10,7 @@ export default function Footer() {
         <span> &copy; {new Date().getFullYear()} Nashif</span>
 
         <a
-          href="https://github.com/nashif-dev"
+          href="https://github.com/nashift"
           target="_blank"
           className="flex items-center gap-2 hover:text-green-400">
           <FaGithub /> GitHub

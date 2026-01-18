@@ -14,10 +14,10 @@ export default function Contact() {
             nashif@gmail.com
           </a>
 
-          <a href="https://github.com/nashif-dev" 
+          <a href="https://github.com/nashift" 
           className="flex items-center gap-3  hover:text-green-400">
             <FaGithub className="text-green-400" />
-            github.com/nashif-dev
+            github.com/nashift
           </a>
         </div>
       </Reveal>
